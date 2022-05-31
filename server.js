@@ -5,6 +5,8 @@ const app = express()
 
 const port = 3000
 
+const sentence = 
+
 
 app.set('view engine', 'ejs'); 
 //app.set('views', './views' );
@@ -12,7 +14,7 @@ app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
     //console.log(req);
-    res.send("Welcome ot the Pokemon App!");
+    res.send("Welcome to the Pokemon App!");
 })
 //creating url not folder 
 app.get("/pokemon", (req, res) => {

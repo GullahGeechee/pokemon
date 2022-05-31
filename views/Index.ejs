@@ -12,7 +12,10 @@
     </h1>
     
     <ul><% data.map((pokemon, index) => {%>
-        <li><%= pokemon.name%></li>
+       
+        
+        <li><%= pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1) %></li>
+        
         <img src="<%=`${pokemon.img}.jpg`%>" alt=""></l>
        <% })%></ul>
     
