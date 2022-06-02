@@ -7,6 +7,10 @@ const PORT = 3000
 app.set('view engine', 'ejs')
 app.set('views', './Views')
 
+//* ======== Middleware
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+
 
 //* ========== ROUTES
 app.get('/', (req, res) => {
@@ -21,6 +25,17 @@ app.get('/pokemon', (req, res) => {
     })
 })
 
+app.get('/pokemon/new', (req, res) => {
+    res.render('New', {
+        pageTitle: 'New Pokemon',
+        pageHeader: 'Create a new Pokemon'
+    })
+})
+
+app.post('/pokemon', (req, res) => {
+    console.log(req.body)
+    
+})
 
 app.get('/pokemon/:id', (req, res) => {
     // res.send(req.params.id)
@@ -34,28 +49,10 @@ app.get('/pokemon/:id', (req, res) => {
 
 
 
-
-
-
 //* =========== LISTENER
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
