@@ -1,34 +1,67 @@
-const { render } = require('ejs');
 const express = require('express')
-const pokemon = require("./models/pokemon")
+const pokemonData = require('./Models/pokemon')
+
+//* ========== SETUP
 const app = express()
-
-const port = 3000
-
-const sentence = 
-
-
-app.set('view engine', 'ejs'); 
-//app.set('views', './views' );
+const PORT = 3000
+app.set('view engine', 'ejs')
+app.set('views', './Views')
 
 
-app.get("/", (req, res) => {
-    //console.log(req);
-    res.send("Welcome to the Pokemon App!");
-})
-//creating url not folder 
-app.get("/pokemon", (req, res) => {
-    res.render("index", {data: pokemon})
+//* ========== ROUTES
+app.get('/', (req, res) => {
+    res.send('Welcome to the Pokemon App!')
 })
 
-app.get('/pokemon/index', (req,res) => {
-    res.send('show',req.params.id )
-   
+app.get('/pokemon', (req, res) => {
+    res.render('Index', {
+        pageTitle: 'Pokemon',
+        pageHeader: 'See All The Pokemon!',
+        pokemonData: pokemonData
+    })
 })
 
 
+app.get('/pokemon/:id', (req, res) => {
+    // res.send(req.params.id)
 
-app.listen(port, () => {
-    console.log("RUN RUN RUN");
+    res.render('Show', {
+        pageTitle: 'Details',
+        pageHeader: " Gotta Catch 'Em All ",
+        pokemon: pokemonData[req.params.id]
+    })
 })
+
+
+
+
+
+
+//* =========== LISTENER
+app.listen(PORT, () => {
+    console.log(`Server is running on port: ${PORT}`);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
