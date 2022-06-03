@@ -4,18 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= pageTitle %>></title>
+    <title><%= pageTitle %></title>
   </head>
   <body>
-    <h1><%= pageHeader %></h1>
+    <h1 class="">Welcome future Pokemon Master!</h1>
+
+   
+    <p><a href="/pokemon/new">Find New Pokemon</a></p>
+    <p><a href="/pokemon">Pokedex</a></p>
+    <p><a href="/">Home</a> </p>
 
     <ul>
-      <% pokemonData.map( (pokemon, index) => { %>
+      <% pokemonData.map( (pokemon) => { %>
       <li>
         <%= pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)%>
       </li>
 
-      <a href='/pokemon/<%= index %>' >Details</a>
+      <a href='/pokemon/<%= pokemon._id %>' >Details</a>
       <% }) %>
     </ul>
   </body>

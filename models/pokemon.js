@@ -5,6 +5,7 @@ module.exports = [
     {name: "charmander", img: "http://img.pokemondb.net/artwork/charmander"},
     {name: "charizard", img: "http://img.pokemondb.net/artwork/charizard"},
     {name: "squirtle", img: "http://img.pokemondb.net/artwork/squirtle"},
-    {name: "wartortle", img: "http://img.pokemondb.net/artwork/wartortle"}
+    {name: "wartortle", img: "http://img.pokemondb.net/artwork/wartortle"},
+    {name: "sawk", img: "https://img.pokemondb.net/artwork/sawk"}
  ];
  
